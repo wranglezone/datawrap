@@ -24,7 +24,6 @@ create_dataset_dictionary <- function(dataset) {
 #' Describe the class of an object for a data dictionary
 #'
 #' @param x (`any`) The object to describe.
-#'
 #' @returns (`character(1)`) A descriptive class label for the object.
 #' @keywords internal
 .class_friendly <- function(x) {
@@ -36,11 +35,7 @@ create_dataset_dictionary <- function(dataset) {
 
 #' Convert a string to a full sentence
 #'
-#' Replaces underscores with spaces, converts to sentence case, strips any
-#' trailing period, and appends one.
-#'
 #' @inheritParams stringr::str_to_sentence
-#'
 #' @returns (`character`) The input string(s) converted to sentence case with a
 #'   trailing period.
 #' @keywords internal

@@ -20,7 +20,6 @@ consistent across platforms.}
 trailing period.
 }
 \description{
-Replaces underscores with spaces, converts to sentence case, strips any
-trailing period, and appends one.
+Convert a string to a full sentence
 }
 \keyword{internal}
