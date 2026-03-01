@@ -16,6 +16,10 @@ knitr::opts_chunk$set(
 # datadox
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN status](https://www.r-pkg.org/badges/version/datadox)](https://CRAN.R-project.org/package=datadox)
+[![Codecov test coverage](https://codecov.io/gh/wranglezone/datadox/graph/badge.svg)](https://app.codecov.io/gh/wranglezone/datadox)
+[![R-CMD-check](https://github.com/wranglezone/datadox/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/wranglezone/datadox/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Helpers to create data dictionaries and use them to document package datasets.

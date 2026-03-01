@@ -1,0 +1,6 @@
+url: https://wranglezone.github.io/datadox/
+template:
+  bootstrap: 5
+lang: en-US
+development:
+  mode: auto
