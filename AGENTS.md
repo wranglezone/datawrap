@@ -12,7 +12,8 @@ Skills in @.github/skills should be loaded when the user triggers them.
 ## File Organization
 
 Each exported function should be defined in its own file named
-`R/{function_name}.R`. For example, `create_dataset_dictionary()`
+`R/{function_name}.R`. For example,
+[`create_dataset_dictionary()`](https://wranglezone.github.io/datadox/reference/create_dataset_dictionary.md)
 belongs in `R/create_dataset_dictionary.R`. Any helper functions used
 exclusively by that exported function should also live in the same file.
 General-purpose helpers shared across multiple functions belong in
@@ -46,7 +47,7 @@ To check coverage for a single file:
 
 ``` r
 covr_res <- devtools:::test_coverage_active_file("R/file_name.R")
-which(vapply(covr_res, `[[`, integer(1), "value") == 0)
+which(vapply(covr_res, `[[`, numeric(1), "value") == 0)
 ```
 
 The following files are intentionally excluded from coverage

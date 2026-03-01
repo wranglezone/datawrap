@@ -24,5 +24,10 @@ Code of
 Conduct](https://wranglezone.github.io/datadox/CODE_OF_CONDUCT.html). By
 contributing to this project, you agree to abide by its terms.
 
-# 
+# Package index
+
+## All functions
+
+- [`create_dataset_dictionary()`](https://wranglezone.github.io/datadox/reference/create_dataset_dictionary.md)
+  : Create a data dictionary tibble for a dataset
 
