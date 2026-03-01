@@ -12,10 +12,6 @@
 #' @examples
 #' create_dataset_dictionary(mtcars)
 create_dataset_dictionary <- function(dataset) {
-  rlang::check_installed(
-    c("purrr", "tibble"),
-    "to create a data dictionary."
-  )
   tibble::tibble(
     column_name = names(dataset),
     class = unname(purrr::map_chr(dataset, .class_friendly)),
@@ -32,7 +28,6 @@ create_dataset_dictionary <- function(dataset) {
 #' @returns (`character(1)`) A descriptive class label for the object.
 #' @keywords internal
 .class_friendly <- function(x) {
-  rlang::check_installed("vctrs", "to describe column classes.")
   result <- sub("<[^>]*>", "", vctrs::vec_ptype_full(x))
   # vctrs returns "hms" or "time" depending on whether the hms package is
   # loaded; normalise to "time" for consistency.
@@ -50,7 +45,6 @@ create_dataset_dictionary <- function(dataset) {
 #'   trailing period.
 #' @keywords internal
 .str_to_sentence_full <- function(string, locale = "en") {
-  rlang::check_installed("stringr", "to convert strings to sentence case.")
   string |>
     stringr::str_replace_all("_", " ") |>
     stringr::str_remove("\\.$") |>
