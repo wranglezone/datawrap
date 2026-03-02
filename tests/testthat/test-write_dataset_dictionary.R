@@ -41,7 +41,6 @@ test_that(".write_file_lines falls back to file.edit when usethis is unavailable
 # write_dataset_dictionary() --------------------------------------------------
 
 test_that("write_dataset_dictionary creates a file at the expected path (#4)", {
-  skip_if_not_installed("knitr")
   tmp_dir <- withr::local_tempdir()
   df <- data.frame(x = 1L)
   write_dataset_dictionary(
@@ -54,7 +53,6 @@ test_that("write_dataset_dictionary creates a file at the expected path (#4)", {
 })
 
 test_that("write_dataset_dictionary infers dataset_name from the call (#4)", {
-  skip_if_not_installed("knitr")
   tmp_dir <- withr::local_tempdir()
   my_special_df <- data.frame(x = 1L)
   write_dataset_dictionary(my_special_df, path = tmp_dir, open = FALSE)
@@ -62,7 +60,6 @@ test_that("write_dataset_dictionary infers dataset_name from the call (#4)", {
 })
 
 test_that("write_dataset_dictionary returns the file path invisibly (#4)", {
-  skip_if_not_installed("knitr")
   tmp_dir <- withr::local_tempdir()
   df <- data.frame(x = 1L)
   result <- withVisible(
@@ -78,7 +75,6 @@ test_that("write_dataset_dictionary returns the file path invisibly (#4)", {
 })
 
 test_that("write_dataset_dictionary produces one row per column (#4)", {
-  skip_if_not_installed("knitr")
   tmp_dir <- withr::local_tempdir()
   df <- data.frame(x = 1L, y = "a", z = TRUE)
   write_dataset_dictionary(
@@ -93,7 +89,6 @@ test_that("write_dataset_dictionary produces one row per column (#4)", {
 })
 
 test_that("write_dataset_dictionary includes column names in the output (#4)", {
-  skip_if_not_installed("knitr")
   tmp_dir <- withr::local_tempdir()
   df <- data.frame(wind_speed = 1.0, air_temp = 1.0)
   write_dataset_dictionary(
@@ -111,7 +106,6 @@ test_that("write_dataset_dictionary includes column names in the output (#4)", {
 })
 
 test_that("write_dataset_dictionary uses .class_friendly for the class column (#4)", {
-  skip_if_not_installed("knitr")
   tmp_dir <- withr::local_tempdir()
   df <- data.frame(x = 1L, y = factor("a"))
   write_dataset_dictionary(
@@ -129,7 +123,6 @@ test_that("write_dataset_dictionary uses .class_friendly for the class column (#
 })
 
 test_that("write_dataset_dictionary uses .str_to_sentence_full for descriptions (#4)", {
-  skip_if_not_installed("knitr")
   tmp_dir <- withr::local_tempdir()
   df <- data.frame(wind_speed = 1.0)
   write_dataset_dictionary(

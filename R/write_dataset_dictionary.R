@@ -27,7 +27,6 @@ write_dataset_dictionary <- function(
   dataset_name = rlang::caller_arg(dataset),
   open = rlang::is_interactive()
 ) {
-  rlang::check_installed("knitr", "to write a data dictionary.")
   dict <- create_dataset_dictionary(dataset)
   file_path <- file.path(path, paste0(dataset_name, "_dictionary.md"))
   .write_file_lines(knitr::kable(dict), file_path, open = open)
