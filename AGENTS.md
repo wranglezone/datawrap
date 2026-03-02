@@ -36,6 +36,19 @@ gh pr view 456
 gh pr list
 ```
 
+### Commit message style
+
+Use conventional commits with backtick-quoted function names. Close issues in the body with `- Closes #N`. Example:
+
+```
+feat: add `describe_dataset()`
+
+Generates a `@format` roxygen2 block for a dataset, suitable for use
+with `@eval` in package dataset documentation.
+
+- Closes #3
+```
+
 ---
 
 ## Skills
