@@ -47,21 +47,9 @@ Files excluded from the coverage requirement:
 Test individual functions in isolation:
 
 ```r
-test_that("create_dataset_dictionary() returns a data frame (#1)", {
-  result <- create_dataset_dictionary(mtcars)
-  expect_s3_class(result, "data.frame")
-})
-```
-
-### Integration tests
-
-Test end-to-end pipelines through the full function → output path:
-
-```r
-test_that("create_dataset_dictionary() round-trips through describe_dataset() (#1)", {
-  dict <- create_dataset_dictionary(mtcars)
-  desc <- describe_dataset(dict)
-  expect_type(desc, "character")
+test_that("create_dataset_dictionary returns a tibble (#2)", {
+  result <- create_dataset_dictionary(data.frame(x = 1L))
+  expect_s3_class(result, "tbl_df")
 })
 ```
 
