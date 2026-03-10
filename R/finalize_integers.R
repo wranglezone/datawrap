@@ -21,6 +21,9 @@ finalize_integers <- function(dataset) {
       c("invalid_dataset", "invalid_argument")
     )
   }
+  # TODO: This function isn't enough to warrant adding dplyr to imports, but
+  # this should be refactored to use dplyr::mutate, dplyr::across, and
+  # dplyr::where when something else necessitates dplyr.
   int_ish_cols <- purrr::map_lgl(dataset, \(x) {
     !is.logical(x) && stbl::is_int_ish(x)
   })
