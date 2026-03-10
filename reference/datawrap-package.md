@@ -7,9 +7,9 @@ apply finishing touches to data for distribution.
 
 Useful links:
 
-- <https://github.com/wranglezone/datawrap>
-
 - <https://wranglezone.github.io/datawrap/>
+
+- <https://github.com/wranglezone/datawrap>
 
 - Report bugs at <https://github.com/wranglezone/datawrap/issues>
 

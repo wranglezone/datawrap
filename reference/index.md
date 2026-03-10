@@ -10,5 +10,8 @@
 
   Generate a `@format` roxygen2 block for a dataset
 
+- [`finalize_integers()`](https://wranglezone.github.io/datawrap/reference/finalize_integers.md)
+  : Downcast integerish columns to integer
+
 - [`write_dataset_dictionary()`](https://wranglezone.github.io/datawrap/reference/write_dataset_dictionary.md)
   : Write an initial data dictionary markdown file for a dataset

@@ -11,12 +11,12 @@ Source:
 [`DESCRIPTION`](https://github.com/wranglezone/datawrap/blob/main/DESCRIPTION)
 
 Harmon J (2026). *datawrap: Final Steps for Dataset Preparation*. R
-package version 0.0.0.9000, <https://wranglezone.github.io/datawrap/>.
+package version 0.0.0.9001, <https://wranglezone.github.io/datawrap/>.
 
     @Manual{,
       title = {datawrap: Final Steps for Dataset Preparation},
       author = {Jon Harmon},
       year = {2026},
-      note = {R package version 0.0.0.9000},
+      note = {R package version 0.0.0.9001},
       url = {https://wranglezone.github.io/datawrap/},
     }
