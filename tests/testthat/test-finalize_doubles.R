@@ -1,8 +1,13 @@
-# finalize_doubles() -----------------------------------------------------------
-
 test_that("finalize_doubles() converts integer-valued double columns to integer (#10)", {
   df <- data.frame(x = c(1.0, 2.0, 3.0), y = c(1.1, 2.2, 3.3))
   result <- finalize_doubles(df)
+  expect_type(result$x, "integer")
+  expect_type(result$y, "double")
+})
+
+test_that("finalize_doubles() converts integer-valued double elements in a list to integer (#10)", {
+  lst <- list(x = c(1.0, 2.0, 3.0), y = c(1.1, 2.2, 3.3))
+  result <- finalize_doubles(lst)
   expect_type(result$x, "integer")
   expect_type(result$y, "double")
 })
@@ -34,20 +39,23 @@ test_that("finalize_doubles() preserves the class of the input (#10)", {
 
 test_that("finalize_doubles() errors if dataset is not a data.frame (#10)", {
   stbl::expect_pkg_error_classes(
-    finalize_doubles(list(x = 1.0)),
+    finalize_doubles("not a dataset"),
     "datawrap",
+    "invalid_dataset",
     "invalid_argument"
   )
 })
 
 test_that("finalize_doubles() handles a dataset with no double columns (#10)", {
   df <- data.frame(x = 1L, y = "a", stringsAsFactors = FALSE)
-  result <- finalize_doubles(df)
-  expect_identical(result, df)
+  expect_identical(finalize_doubles(df), df)
 })
 
 test_that("finalize_doubles() handles an empty data frame (#10)", {
   df <- data.frame()
-  result <- finalize_doubles(df)
-  expect_identical(result, df)
+  expect_identical(finalize_doubles(df), df)
+})
+
+test_that("finalize_doubles() handles NULL (#10)", {
+  expect_null(finalize_doubles(NULL))
 })
