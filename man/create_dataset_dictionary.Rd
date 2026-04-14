@@ -7,7 +7,7 @@
 create_dataset_dictionary(dataset)
 }
 \arguments{
-\item{dataset}{(\code{data.frame}) The dataset to describe.}
+\item{dataset}{(\code{data.frame}) The dataset to document.}
 }
 \value{
 (\code{tibble}) A tibble with columns \code{column_name} (\code{character}),

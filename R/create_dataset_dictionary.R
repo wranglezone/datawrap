@@ -3,7 +3,7 @@
 #' Builds a tibble with one row per column in `dataset`, containing the column
 #' name, class label, and a placeholder description.
 #'
-#' @param dataset (`data.frame`) The dataset to describe.
+#' @inheritParams .shared-params
 #'
 #' @returns (`tibble`) A tibble with columns `column_name` (`character`),
 #'   `class` (`character`), and `description` (`character`).

@@ -5,10 +5,10 @@
 #' actual dimensions of `dataset`; each column gets one `\item` entry combining
 #' the class label and description from `dictionary`.
 #'
-#' @param dataset (`data.frame`) The dataset to document.
 #' @param dictionary (`data.frame`) A dictionary with columns `column_name`,
 #'   `class`, and `description`, one row per column of `dataset`. Defaults to
 #'   `create_dataset_dictionary(dataset)`.
+#' @inheritParams .shared-params
 #'
 #' @returns (`character`) A character vector of roxygen2 lines forming a
 #'   `@format` block, suitable for returning from `@eval`.

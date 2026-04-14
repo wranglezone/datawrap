@@ -21,6 +21,7 @@ Imports:
     tibble,
     vctrs
 Suggests:
+    astgrepr,
     testthat (>= 3.0.0),
     usethis,
     withr

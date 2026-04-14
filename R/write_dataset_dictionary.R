@@ -5,14 +5,12 @@
 #' hand-edited, then read back (e.g. via `readMDTable::read_md_table()`) to
 #' produce a curated dictionary for use with [describe_dataset()].
 #'
-#' @param dataset (`data.frame`) The dataset to document.
 #' @param path (`character(1)`) Directory in which to write the file. Defaults
 #'   to `"data-raw"`.
 #' @param dataset_name (`character(1)`) Base name used to construct the output
 #'   filename (`{dataset_name}_dictionary.md`). Defaults to the name of the
 #'   object passed as `dataset`.
-#' @param open (`logical(1)`) Whether to open the file for editing after
-#'   writing. Defaults to `TRUE` in interactive sessions.
+#' @inheritParams .shared-params
 #'
 #' @returns (`character(1)`) The path to the written file, invisibly.
 #' @seealso [create_dataset_dictionary()], [describe_dataset()]
@@ -38,8 +36,7 @@ write_dataset_dictionary <- function(
 #'
 #' @param lines (`character`) The lines to write.
 #' @param file_path (`character(1)`) Path to the output file.
-#' @param open (`logical(1)`) Whether to open the file for editing after
-#'   writing. Defaults to `TRUE` in interactive sessions.
+#' @inheritParams .shared-params
 #' @returns (`character(1)`) The path to the written file, invisibly.
 #' @keywords internal
 .write_file_lines <- function(
