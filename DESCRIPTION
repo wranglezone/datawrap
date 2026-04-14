@@ -16,7 +16,7 @@ Imports:
     knitr,
     purrr,
     rlang,
-    stbl,
+    stbl (>= 0.3.0),
     stringr,
     tibble,
     vctrs
@@ -24,8 +24,6 @@ Suggests:
     testthat (>= 3.0.0),
     usethis,
     withr
-Remotes:
-    stbl=wranglezone/stbl
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
