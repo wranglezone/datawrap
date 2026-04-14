@@ -13,7 +13,7 @@ create_dataset_dictionary(dataset)
 
 - dataset:
 
-  (`data.frame`) The dataset to describe.
+  (`data.frame`) The dataset to document.
 
 ## Value
 
