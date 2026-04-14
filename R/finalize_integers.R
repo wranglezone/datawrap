@@ -16,8 +16,7 @@
 #' finalize_integers(df)
 finalize_integers <- function(dataset) {
   if (!is.null(dataset) && !is.list(dataset)) {
-    stbl::pkg_abort(
-      "datawrap",
+    .pkg_abort(
       "{.arg dataset} must be a {.cls data.frame}, {.cls list}, or {.cls NULL}.",
       c("invalid_dataset", "invalid_argument")
     )

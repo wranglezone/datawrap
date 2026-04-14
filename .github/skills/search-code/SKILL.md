@@ -1,12 +1,12 @@
 ---
 name: search-code
+trigger: search / rewrite code
 description: Search and rewrite R source code by syntax using astgrepr. Use when asked to find patterns in code, search for function calls, identify usage of specific arguments, locate structural patterns across R files, or perform find-and-replace on code structure.
 ---
 
 # Search and rewrite code with astgrepr
 
-`{astgrepr}` enables AST-based code search — structural queries that regex can't express cleanly.
-If not installed: `install.packages("astgrepr")`
+`{astgrepr}` enables AST-based code search — structural queries that regex can't express cleanly. If not installed: `install.packages("astgrepr")`
 
 ```r
 library(astgrepr)
@@ -16,7 +16,7 @@ add    <- function(x, y)                x + y
 greet  <- function(name, greeting, sep) paste0(greeting, sep, name)
 square <- function(x)                   x^2
 "
-root <- src |> tree_new() |> tree_root()  # or tree_new(file = "R/Foo.R")
+root <- src |> tree_new() |> tree_root()  # or tree_new(file = "R/my_file.R")
 
 # µNAME/µA/µB capture matched nodes; only `add` matches (2 params)
 matches <- node_find_all(root,
@@ -71,7 +71,7 @@ ast_rule(any = list(ast_rule(pattern = "any(is.na(µµµ))"), # boolean OR
 See `?node_replace_all`, `?tree_rewrite`.
 
 ```r
-root  <- tree_root(tree_new(file = "R/MyFile.R"))
+root  <- tree_root(tree_new(file = "R/my_file.R"))
 fixes <- root |>
   node_find_all(
     ast_rule(id = "any_na",  pattern = "any(is.na(µVAR))"),
@@ -80,5 +80,5 @@ fixes <- root |>
   node_replace_all(any_na  = "anyNA(~~VAR~~)",
                    any_dup = "anyDuplicated(~~VAR~~) > 0")
 tree_rewrite(root, fixes)                                  # preview
-writeLines(tree_rewrite(root, fixes), con = "R/MyFile.R") # write back
+writeLines(tree_rewrite(root, fixes), con = "R/my_file.R") # write back
 ```
